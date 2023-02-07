@@ -6,10 +6,9 @@ $(function () {
     e.preventDefault();
     var searchTerm = $searchInput.val();
     $searchInput.val('');
-    $.get('https://api.giphy.com/v1/gifs/search', {
-      q: searchTerm,
-      api_key: '1RXQS3aJ96iv3ccp8PDM2Za14IRlzlqX',
-    }).then(function (res) {
+    $.get(
+      `https://api.giphy.com/v1/gifs/search?api_key=1RXQS3aJ96iv3ccp8PDM2Za14IRlzlqX&q=${searchTerm}`
+    ).then(function (res) {
       var numResults = res.data.length;
       if (numResults) {
         var randomIdx = Math.floor(Math.random() * numResults);
