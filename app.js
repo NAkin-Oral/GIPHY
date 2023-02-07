@@ -6,7 +6,7 @@ $(function () {
     e.preventDefault();
     var searchTerm = $searchInput.val();
     $searchInput.val('');
-    $.get('http://api.giphy.com/v1/gifs/search', {
+    $.get('https://api.giphy.com/v1/gifs/search', {
       q: searchTerm,
       api_key: '1RXQS3aJ96iv3ccp8PDM2Za14IRlzlqX',
     }).then(function (res) {
